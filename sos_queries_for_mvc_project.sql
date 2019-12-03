@@ -1,10 +1,9 @@
-
 --select top 5 a.au_id,s.title_id, au_fname, au_lname, phone, address, city, state, zip, contract
 --from authors as a, sales as s, titleauthor as ta
 --where a.au_id = ta.au_id and s.title_id = ta.title_id
 
 
---top 5 pwlhsewn se auto to diasthma
+--top 5 sales for this interval
 select top 5 *
 from sales
 where ord_date >= '1994-01-01' and ord_date <= '1994-12-31'
@@ -20,20 +19,20 @@ from authors as a, sales as s, titleauthor as ta
 where a.au_id = ta.au_id and s.title_id = ta.title_id 
  and ord_date >= '1994-01-01' and ord_date <= '1994-12-31'
 
---paraggelies se sygkekrimeni periodoo
+--orders for this interval
  select *
  from sales as s
  where ord_date >= '1994-01-01' and ord_date <= '1994-12-31'
  
 
---gia paragelies se opoiodhpote katasthma--
+--for orders in any store--
 
  select ord_num, stor_id, t.title
  from sales as s, titles as t
 where  ord_date >= '1994-01-01' and ord_date <= '1994-12-31'
 and s.title_id = t.title_id
 
---gia sygkekrimeno katasthma pou tha to epilegw mesw dropdown list--
+--for specific store that i will pick from a drop down list--
 
  select ord_num, t.title, t.title_id
  from sales as s, titles as t
@@ -42,11 +41,11 @@ and s.title_id = t.title_id
 and stor_id like 6380 --to apotelesma to ehw parei po metavliti pou ehw orisei mesw tou parakatw query
 
 
- --emfanise ta onomata katasthmatwn, gia dropdown list
+ --show names of stores for the drop down list
  select stor_name
  from stores
 
- --kane antistoixa tou onomatos me to id tou, to name to ehw antlhsei apo ddropdown list
+ --get store id from store name which i have from drop down list
 
  select stor_id 
  from stores
