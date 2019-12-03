@@ -1,0 +1,77 @@
+﻿@model WorldHistoryBookStore.Models.publisher
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<style>
+    .dl-horizontal {
+        background-color: white;
+        border-color: black;
+        border-width: thin;
+        border-style: solid;
+        border-radius: 10px;
+        padding: 10px;
+    }
+</style>
+
+<h2>Details</h2>
+
+
+<h4>Publisher</h4>
+<hr />
+<div>
+    <dl class="dl-horizontal">
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.pub_id)*@ ID
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.pub_id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.pub_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pub_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.city)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.city)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.state)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.state)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.country)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.pub_info.pr_info)*@ Info
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pub_info.pr_info)
+        </dd>
+
+        @Html.ActionLink("Edit", "Edit", new { id = Model.pub_id }, new { @class = "btn btn-primary" })
+    </dl>
+
+    @Html.ActionLink("Back to List", "Index")
+</div>
+

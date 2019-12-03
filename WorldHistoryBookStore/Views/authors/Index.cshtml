@@ -1,0 +1,86 @@
+﻿@model IEnumerable<WorldHistoryBookStore.Models.author>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    .table {
+        background-color:white;
+    }
+</style>
+
+<h2>Authors</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.au_id)*@  ID
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.au_lname)*@ Last Name
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.au_fname)*@ First Name
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.phone)*@  Phone
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.address)*@    Address
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.city)*@       City
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.state)*@      State
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.zip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.contract)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.au_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.au_lname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.au_fname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.city)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.state)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.zip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.contract)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.au_id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.au_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.au_id })
+        </td>
+    </tr>
+}
+
+</table>

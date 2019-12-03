@@ -1,0 +1,55 @@
+﻿@model IEnumerable<WorldHistoryBookStore.Models.roysched>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    .table {
+        background-color: white;
+    }
+</style>
+<h2>Royalty Schedule</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.title.title1)*@ Title
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.lorange)*@ Low Range
+        </th>
+        <th>
+           @* @Html.DisplayNameFor(model => model.hirange)*@ High Range
+        </th>
+        <th>
+           @* @Html.DisplayNameFor(model => model.royalty) *@ Royalty
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.title.title1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lorange)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hirange)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.royalty)
+        </td>
+        <td>
+            <!--  @*@Html.ActionLink("Edit", "Edit", new { id=item.title_id }) |
+          @Html.ActionLink("Details", "Details", new { id=item.title_id }) |
+          @Html.ActionLink("Delete", "Delete", new { id=item.title_id })*@ -->
+        </td>
+    </tr>
+}
+
+</table>

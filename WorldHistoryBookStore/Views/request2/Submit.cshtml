@@ -1,0 +1,79 @@
+﻿@*@model IEnumerable<WorldHistoryBookStore.Models.store>*@
+@model IEnumerable<WorldHistoryBookStore.Models.Request2>
+@{
+    ViewBag.Title = "Submit";
+}
+<style>
+    form {
+        background-color: white;
+        border-color: black;
+        border-width: thin;
+        border-style: solid;
+        border-radius: 10px;
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+</style>
+<script type="text/javascript">
+    function validateForm() {
+        var a = new String(document.forms["form"]["start"].value);
+        var b = new String(document.forms["form"]["end"].value);
+        var c = new String(document.forms["form"]["store"].value);
+
+        alert(c);
+        if ((a == "" && b == "" && c == "") || (a == "" && b != "" && c == "") || (a != "" && b == "" && c == "") || (a == "" && b == "" && c != "")) {
+            alert("Please Fill All Required Fields Or Leave At Least One Field Empty");
+            return false;
+        }
+        else if ((a != "" && b != "" && c != "")) {
+            return true;
+        }
+        else if ((a == "" && b != "" && c != "")) {
+            // document.forms["form"]["start"].value = "01/01/1992";
+            return true;
+        }
+        else if ((a != "" && b == "" && c != "")) {
+            //document.forms["form"]["end"].value = "01/01/1995";
+            return true;
+        }
+        else if ((a != "" && b != "" && c == "")) {
+             document.forms["form"]["store"].value = "All Stores";
+            return true;
+        }
+    }
+</script>
+
+<h2>Request Data</h2>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<form action="Index" method="post" id="my_form" name="form" onsubmit=" return validateForm()">
+    <label for="startd">Start date:</label>
+
+    <input type="date" id="startd" name="start"
+           value="1992-01-01"
+           min="1992-01-01">
+
+    <label for="endd">End date:</label>
+
+    <input type="date" id="endd" name="end"
+           value="1995-12-31"
+           min="1992-01-02">
+
+    <label for="num">Name of store:</label>
+
+
+    @Html.DropDownList("stor_name", "All Stores")
+
+    <!-- <select id="st" name="store">
+         <option value="All stores">All stores</option>
+         <option value="Eric the Read Books">Eric the Read Books</option>
+         <option value="Barnum's">Barnum's</option>
+         <option value="News & Brews">News & Brews</option>
+         <option value="Doc-U-Mat: Quality Laundry and Books">Doc-U-Mat: Quality Laundry and Books</option>
+         <option value="Fricative Bookshop">Fricative Bookshop</option>
+         <option value="Bookbeat">Bookbeat</option>
+     </select>-->
+    <br />
+    <input type="submit" value="Submit" class="btn btn-primary" />
+
+</form>

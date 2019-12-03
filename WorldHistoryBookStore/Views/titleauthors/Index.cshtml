@@ -1,0 +1,66 @@
+﻿@model IEnumerable<WorldHistoryBookStore.Models.titleauthor>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    .table {
+        background-color: white;
+    }
+</style>
+<h2>Titles of Authors</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.author.au_lname)*@ Last Name
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.author.au_fname)*@ First Name
+        </th>
+
+        <th>
+            @* @Html.DisplayNameFor(model => model.title.title1)*@ Title
+        </th>
+        <th>
+            @* @Html.DisplayNameFor(model => model.au_ord)*@ Author order
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.royaltyper)*@ Royalty Person
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.author.au_lname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.author.au_fname)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.title.title1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.au_ord)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.royaltyper)
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { au_id = item.au_id, title_id = item.title_id }) |
+            @Html.ActionLink("Details", "Details", new { au_id = item.au_id, title_id = item.title_id }) |
+            @Html.ActionLink("Delete", "Delete", new { au_id = item.au_id, title_id = item.title_id })
+        </td>
+    </tr>
+    }
+
+</table>

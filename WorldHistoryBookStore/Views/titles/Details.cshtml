@@ -1,0 +1,110 @@
+﻿@model WorldHistoryBookStore.Models.title
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<style>
+    .dl-horizontal {
+        background-color: white;
+        border-color: black;
+        border-width: thin;
+        border-style: solid;
+        border-radius: 10px;
+        padding: 10px;
+    }
+</style>
+
+<h2>Details</h2>
+
+<div>
+    <h4>Title</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.roysched.title_id)*@ ID
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.title_id)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.title1)*@ Title
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.title1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.advance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.advance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.royalty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.royalty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ytd_sales)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ytd_sales)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.notes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.notes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pubdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pubdate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.publisher.pub_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.publisher.pub_name)
+        </dd>
+
+        @Html.ActionLink("Edit", "Edit", new { id = Model.title_id }, new { @class = "btn btn-primary" })
+
+    </dl>
+    @Html.ActionLink("Back to List", "Index")
+
+</div>

@@ -1,0 +1,64 @@
+﻿@model WorldHistoryBookStore.Models.titleauthor
+
+@{
+    ViewBag.Title = "Edit";
+}
+<style>
+    .form-horizontal {
+        background-color: white;
+        border-color: black;
+        border-width: thin;
+        border-style: solid;
+        border-radius: 10px;
+    }
+
+    .form-actions {
+        padding-left: 10px;
+    }
+</style>
+<h2>Edit</h2>
+
+<h4>Title of Author</h4>
+<hr />
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.au_id)
+
+        @Html.HiddenFor(model => model.title_id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.au_ord, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.au_ord, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.au_ord, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.royaltyper, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.royaltyper, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.royaltyper, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-actions no-color">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+<br />
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

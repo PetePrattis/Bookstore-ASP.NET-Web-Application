@@ -1,0 +1,100 @@
+﻿@model WorldHistoryBookStore.Models.author
+
+@{
+    ViewBag.Title = "Details";
+}
+<style>
+    .dl-horizontal {
+        background-color:white;
+        border-color:black;
+        border-width:thin;
+        border-style:solid;
+        border-radius:10px;
+        padding:10px;
+    }
+</style>
+<h2>Details</h2>
+
+<div>
+    <h4>Author</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @* @Html.DisplayNameFor(model => model.au_id)*@ ID
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.au_id)
+        </dd>
+
+        <dt>
+            @* @Html.DisplayNameFor(model => model.au_lname)*@ Last Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.au_lname)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.au_fname)*@ First Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.au_fname)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.phone)*@ Phone
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phone)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.address)*@ Address
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.address)
+        </dd>
+
+        <dt>
+            @* @Html.DisplayNameFor(model => model.city)*@ City
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.city)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.state)*@ State
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.state)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.zip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.zip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.contract)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contract)
+        </dd>
+
+           @Html.ActionLink("Edit", "Edit", new { id = Model.au_id }, new { @class = "btn btn-primary" })
+        
+    </dl>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+       

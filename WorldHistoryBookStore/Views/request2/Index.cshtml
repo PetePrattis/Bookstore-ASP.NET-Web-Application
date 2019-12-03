@@ -1,0 +1,47 @@
+﻿@model IEnumerable<WorldHistoryBookStore.Models.Request2>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    .table {
+        background-color: white;
+    }
+</style>
+<h2>Results</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ord_num)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.stor_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.title)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.ord_num)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.stor_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.title)
+            </td>
+        </tr>
+    }
+
+</table>
+
+<br />
+@Html.ActionLink("Request another data", "Submit")

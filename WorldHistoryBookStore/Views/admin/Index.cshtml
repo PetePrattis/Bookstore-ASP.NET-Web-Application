@@ -1,0 +1,62 @@
+﻿@model IEnumerable<WorldHistoryBookStore.Models.employee>
+
+@{
+    ViewBag.Title = "Tools";
+}
+<h2> Tools </h2>
+
+
+<style>
+    form {
+        background-color: white;
+        border-color: black;
+        border-width: thin;
+        border-style: solid;
+        border-radius: 10px;
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+</style>
+<script type="text/javascript">
+    function select() {
+        $('#select').on('change', function () { });
+    }
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+@if (ViewBag.Message != null)
+{
+    if (ViewBag.Message != "Fail")
+    {
+        <div class="alert alert-success">
+            @ViewBag.Message
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger">
+            @ViewBag.Message
+        </div>
+    }
+}
+
+<form method="post" id="my_form" name="form">
+    <h2> Backup </h2>
+    <div class="btn btn-group">
+        <input type="submit" id="bkpf" name="submit" value="Backup Full" class="btn btn-primary" />
+        <br />
+        <input type="submit" id="bkpi" name="submit" value="Backup Incremented" class="btn btn-primary" />
+    </div> 
+    <hr />
+    <br />
+    <h2> Restore</h2>
+        <p> Select file: </p><input type="file" accept=".bak" id="select" name="select" value="Select" class="button-analyse" />
+        <br /> <br />
+        <input type="submit" id="rstr" name="submit" value="Restore" class="btn btn-primary" />
+   
+
+</form>
+
+@Html.ActionLink("Back to Home Page", "Index", "Home")

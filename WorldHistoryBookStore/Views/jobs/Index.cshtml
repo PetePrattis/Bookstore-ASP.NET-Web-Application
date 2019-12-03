@@ -1,0 +1,57 @@
+﻿@model IEnumerable<WorldHistoryBookStore.Models.job>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    .table {
+        background-color: white;
+    }
+</style>
+
+<h2>Jobs</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.job_id)
+        </th>
+        <th>
+            @* @Html.DisplayNameFor(model => model.job_desc)*@ Job Description
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.min_lvl)*@ Minimum Level
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.max_lvl)*@ Maximum Level
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.job_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.job_desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.min_lvl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.max_lvl)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.job_id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.job_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.job_id })
+        </td>
+    </tr>
+}
+
+</table>

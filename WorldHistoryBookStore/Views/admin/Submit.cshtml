@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<style>
+    form {
+        background-color: white;
+        border-color: black;
+        border-width: thin;
+        border-style: solid;
+        border-radius: 10px;
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+</style>
+
+<!-- LOGIN PAGE!!-->
+
+
+<h2>Login</h2>
+
+<form action="Check" method="post" id="my_form" name="form">
+
+    <label for="ln">Employee's last name:</label>
+    <br />
+    <input type="text" name="lname" id="ln" required />
+    <br />
+    <label for="id">Employee's id:</label>
+    <br />
+    <input type="text" name="emp_id" id="id" required />
+    <br />
+    <br />
+    <input type="submit" name="submit" value="Log In" class="btn btn-primary" />
+
+</form>

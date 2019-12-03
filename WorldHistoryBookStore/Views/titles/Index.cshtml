@@ -1,0 +1,92 @@
+﻿@model IEnumerable<WorldHistoryBookStore.Models.title>
+
+@{
+    ViewBag.Title = "Titles";
+}
+<style>
+    .table {
+        background-color: white;
+    }
+</style>
+
+<h2>Titles</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.title_id)*@ ID
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.title1)*@ Title
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.advance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.royalty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ytd_sales)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.notes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pubdate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.publisher.pub_name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.title_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.title1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.advance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.royalty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ytd_sales)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.notes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pubdate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.publisher.pub_name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.title_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.title_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.title_id })
+        </td>
+    </tr>
+}
+
+</table>

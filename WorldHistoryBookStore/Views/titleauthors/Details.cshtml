@@ -1,0 +1,66 @@
+﻿@model WorldHistoryBookStore.Models.titleauthor
+
+@{
+    ViewBag.Title = "Details";
+}
+<style>
+    .dl-horizontal {
+        background-color: white;
+        border-color: black;
+        border-width: thin;
+        border-style: solid;
+        border-radius: 10px;
+        padding: 10px;
+    }
+</style>
+<h2>Details</h2>
+
+<h4>Title of Author</h4>
+<hr />
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.au_ord)*@ Author Order
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.au_ord)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.royaltyper)*@ Royalty Person
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.royaltyper)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.author.au_lname)*@ Last Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.author.au_lname)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.author.au_fname)*@ First Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.author.au_fname)
+        </dd>
+        <dt>
+            @*@Html.DisplayNameFor(model => model.title.title1)*@ Title
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.title.title1)
+        </dd>
+
+        @Html.ActionLink("Edit", "Edit", new { au_id = Model.au_id, title_id = Model.title_id }, new { @class = "btn btn-primary" })
+    </dl>
+</div>
+<br />
+    @Html.ActionLink("Back to List", "Index")
+

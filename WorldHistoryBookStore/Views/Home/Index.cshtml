@@ -1,0 +1,135 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<style>
+    .blockquote /* bootstrap class blockquote*/ {
+        background-color: white;
+    }
+
+    blockquote { /* css blockquote */
+        text-align: center;
+    }
+
+    .jumbotron, .blockquote {
+        border-color: black;
+        border-width: thin;
+        border-style: solid;
+        border-radius: 10px;
+    }
+
+    .btn-group {
+        float: right;
+    }
+</style>
+
+<div class="jumbotron">
+        <!--<p>@*@Html.ActionLink("Admin", "Index", "admin")*@</p>-->
+        <div class="btn btn-group">
+            <form method="post" id="my_form" name="form">
+                @Html.ActionLink("Admin Login","Submit","admin")
+                
+                @if (Session["test"] != null)
+                            {
+                                var temp = Session["test"].ToString();
+                                if (temp == "admin")
+                                {
+                        <input type="submit" name="submit" value="Tools" class="btn btn-link" />
+                    }
+                }
+            </form>
+        </div>
+    <h1>World History Bookstore</h1>
+    <p class="lead">Welcome to the online system of World History Bookstore</p>
+    <hr />
+    <br />
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Titles</h3>
+            <img src="~/Content/Images/title-small.png" class="img-fluid" />
+            <p>@Html.ActionLink("Explore", "Index", "titles")</p>
+        </div>
+        <div class="col-md-4">
+            <h3>Authors</h3>
+            <img src="~/Content/Images/author_small.png" class="img-fluid" />
+            <p>@Html.ActionLink("Explore", "Index", "authors")</p>
+        </div>
+        <div class="col-md-4">
+            <h3>Publishers</h3>
+            <img src="~/Content/Images/publisher-small.png" class="img-fluid" />
+            <p>@Html.ActionLink("Explore", "Index", "publishers")</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Book titles with authors</h3>
+            <img src="~/Content/Images/titleauthor-small.png" class="img-fluid" />
+            <p>@Html.ActionLink("Explore", "Index", "titleauthors")</p>
+        </div>
+        <div class="col-md-4">
+            <h3>Sales</h3>
+            <img src="~/Content/Images/sales-small.png" class="img-fluid" />
+            <p>@Html.ActionLink("Explore", "Index", "sales")</p>
+        </div>
+        <div class="col-md-4">
+            <h3>Discounts</h3>
+            <img src="~/Content/Images/discount-small.png" class="img-fluid" />
+            <p>@Html.ActionLink("Explore", "Index", "discounts")</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Stores</h3>
+            <img src="~/Content/Images/stores-small.png" class="img-fluid" />
+            <p>@Html.ActionLink("Explore", "Index", "stores")</p>
+        </div>
+        <div class="col-md-4">
+            <h3>Employees</h3>
+            <img src="~/Content/Images/employee-small.png" class="img-fluid" />
+            <p>@Html.ActionLink("Explore", "Index", "employees")</p>
+        </div>
+        <div class="col-md-4">
+            <h3>Jobs</h3>
+            <img src="~/Content/Images/job-small.png" class="img-fluid" />
+            <p>@Html.ActionLink("Explore", "Index", "jobs")</p>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Publisher Info</h3>
+            <img src="~/Content/Images/publisher-info-small.png" class="img-fluid" />
+            <p> @Html.ActionLink("Explore", "Index", "pub_info")</p>
+        </div>
+        <div class="col-md-4">
+            <h3>Royalty Schedule</h3>
+            <img src="~/Content/Images/royalty-small.png" class="img-fluid" />
+            <p> @Html.ActionLink("Explore", "Index", "royscheds")</p>
+        </div>
+    </div>
+    <hr />
+    <h2>Request Data</h2>
+    <img src="~/Content/Images/star-small.png" class="img-fluid" />
+    <div class="row">
+        <div class="col-md-6">
+            <h3> Top Authors based on sales on a certain time period</h3>
+            <p> @Html.ActionLink("Find out", "Submit", "request1")</p>
+        </div>
+        <div class="col-md-6">
+            <h3> Sales on a certain time period</h3>
+            <p> @Html.ActionLink("Find out", "Submit", "request2")</p>
+        </div>
+    </div>
+</div>
+
+<br />
+<div class="blockquote">
+    <blockquote>
+
+        <p>So many books, so little time.</p>
+
+        <small>by <cite>Frank Zappa</cite></small>
+
+    </blockquote>
+</div>

@@ -1,0 +1,58 @@
+﻿@model WorldHistoryBookStore.Models.roysched
+
+@{
+    ViewBag.Title = "Details";
+}
+<style>
+    .dl-horizontal {
+        background-color: white;
+        border-color: black;
+        border-width: thin;
+        border-style: solid;
+        border-radius: 10px;
+        padding: 10px;
+    }
+</style>
+<h2>Details</h2>
+
+<h4>Royalty Schedule</h4>
+<hr />
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.lorange)*@ Low Range
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lorange)
+        </dd>
+
+        <dt>
+            @* @Html.DisplayNameFor(model => model.hirange)*@ High Range
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hirange)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.royalty)*@ Royalty
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.royalty)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.title.title1)*@ Title
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.title.title1)
+        </dd>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.title_id }, new { @class = "btn btn-primary" })
+    </dl>
+</div>
+<br /> 
+    @Html.ActionLink("Back to List", "Index")
+

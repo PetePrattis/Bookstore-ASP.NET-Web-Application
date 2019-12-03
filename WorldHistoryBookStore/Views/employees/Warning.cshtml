@@ -1,0 +1,59 @@
+﻿@model IEnumerable<WorldHistoryBookStore.Models.job>
+
+@{
+    ViewBag.Title = "Job Level based on Job ID";
+}
+<style>
+    .table {
+        background-color: white;
+    }
+</style>
+
+<h2>Jobs</h2>
+<hr />
+<div class="alert alert-info">
+    <strong>Job level should be between minimum and maximum values</strong>
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.job_id)*@ Job ID
+        </th>
+        <th>
+            @* @Html.DisplayNameFor(model => model.job_desc)*@ Job Description
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.min_lvl)*@ Minimum Level
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.max_lvl)*@ Maximum Level
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.job_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.job_desc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.min_lvl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.max_lvl)
+            </td>
+        </tr>
+    }
+
+</table>
+
+    <br />
+    <p>@Html.ActionLink("Back to Create Page", "Create")</p>
+
+
+

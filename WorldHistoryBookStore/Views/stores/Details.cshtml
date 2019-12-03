@@ -1,0 +1,75 @@
+﻿@model WorldHistoryBookStore.Models.store
+
+@{
+    ViewBag.Title = "Details";
+}
+<style>
+    .dl-horizontal {
+        background-color: white;
+        border-color: black;
+        border-width: thin;
+        border-style: solid;
+        border-radius: 10px;
+        padding: 10px;
+    }
+</style>
+<h2>Details</h2>
+
+<h4>Store</h4>
+<hr />
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.stor_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.stor_id)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.stor_name)*@ Store Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.stor_name)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.stor_address)*@ Store Address
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.stor_address)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.city)*@ City
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.city)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.state)*@ State
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.state)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.zip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.zip)
+        </dd>
+
+        @Html.ActionLink("Edit", "Edit", new { id = Model.stor_id }, new { @class = "btn btn-primary" })
+    </dl>
+</div>
+
+<br />
+    @Html.ActionLink("Back to List", "Index")

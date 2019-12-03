@@ -1,0 +1,67 @@
+﻿@model IEnumerable<WorldHistoryBookStore.Models.store>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    .table {
+        background-color: white;
+    }
+</style>
+<h2>Stores</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.stor_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.stor_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.stor_address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.city)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.state)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.zip)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.stor_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.stor_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.stor_address) 
+        </td>
+        <td>
+             @Html.DisplayFor(modelItem => item.city)
+        </td>
+        <td>
+             @Html.DisplayFor(modelItem => item.state)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.zip)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.stor_id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.stor_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.stor_id })
+        </td>
+    </tr>
+}
+
+</table>

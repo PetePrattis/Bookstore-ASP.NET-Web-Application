@@ -1,0 +1,86 @@
+﻿@model WorldHistoryBookStore.Models.employee
+
+@{
+    ViewBag.Title = "Details";
+}
+<style>
+    .dl-horizontal {
+        background-color: white;
+        border-color: black;
+        border-width: thin;
+        border-style: solid;
+        border-radius: 10px;
+        padding: 10px;
+    }
+</style>
+
+<h2>Details</h2>
+
+
+<h4>Employee</h4>
+<hr />
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @* @Html.DisplayNameFor(model => model.fname) *@ First Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fname)
+        </dd>
+
+        <dt>
+            @* @Html.DisplayNameFor(model => model.lname)*@ Last Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.minit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.minit)
+        </dd>
+
+        <dt>
+            @*  @Html.DisplayNameFor(model => model.job_lvl) *@ Job Level
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.job_lvl)
+        </dd>
+
+        <dt>
+            @* @Html.DisplayNameFor(model => model.hire_date)*@ Hire Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hire_date)
+        </dd>
+
+        <dt>
+            @* @Html.DisplayNameFor(model => model.job.job_desc) *@ Job Description
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.job.job_desc)
+        </dd>
+
+        <dt>
+            @* @Html.DisplayNameFor(model => model.publisher.pub_name)*@ Publisher Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.publisher.pub_name)
+        </dd>
+
+        @Html.ActionLink("Edit", "Edit", new { id = Model.emp_id }, new {@class="btn btn-primary"})
+
+    </dl>
+</div>
+<br />
+    @Html.ActionLink("Back to List", "Index")

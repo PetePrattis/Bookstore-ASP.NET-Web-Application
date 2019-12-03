@@ -1,0 +1,75 @@
+﻿@model IEnumerable<WorldHistoryBookStore.Models.author>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    .table {
+        background-color: white;
+    }
+</style>
+<h2>Results</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.au_lname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.au_fname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.city)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.state)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.zip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.contract)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.au_lname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.au_fname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.city)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.state)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.zip)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.contract)
+            </td>
+        </tr>
+    }
+</table>
+<br /> 
+    @Html.ActionLink("Request another data", "Submit")

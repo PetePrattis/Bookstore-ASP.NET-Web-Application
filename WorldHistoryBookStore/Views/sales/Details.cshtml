@@ -1,0 +1,79 @@
+﻿@model WorldHistoryBookStore.Models.sale
+
+@{
+    ViewBag.Title = "Details";
+}
+<style>
+    .dl-horizontal {
+        background-color: white;
+        border-color: black;
+        border-width: thin;
+        border-style: solid;
+        border-radius: 10px;
+        padding: 10px;
+    }
+</style>
+
+<h2>Details</h2>
+
+<h4>Sale</h4>
+<hr />
+<div>
+    <dl class="dl-horizontal">
+
+        <dt>
+            @* @Html.DisplayNameFor(model => model.store.stor_name)*@ Store Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.store.stor_name)
+        </dd>
+        
+        <dt>
+            @*@Html.DisplayNameFor(model => model.ord_date)*@ Order Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ord_date)
+        </dd>
+        
+        <dt>
+            @* @Html.DisplayNameFor(model => model.ord_num)*@ Order Number
+        </dt>
+
+       <dd> 
+        @Html.DisplayFor(model=> model.ord_num)
+       </dd>
+
+       <dt>
+           @*@Html.DisplayNameFor(model => model.qty)*@ Quantity
+       </dt>
+
+       <dd>
+           @Html.DisplayFor(model => model.qty)
+       </dd>
+
+       <dt>
+           @*@Html.DisplayNameFor(model => model.payterms)*@ Pay terms
+       </dt>
+
+       <dd>
+           @Html.DisplayFor(model => model.payterms)
+       </dd>
+
+
+       <dt>
+        @* @Html.DisplayNameFor(model => model.title.title1) *@ Title
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.title.title1)
+        </dd>
+
+
+        @Html.ActionLink("Edit", "Edit", new { stor_id = Model.stor_id, ord_num = Model.ord_num }, new { @class = "btn btn-primary" })
+
+    </dl>
+</div>
+<br />
+    @Html.ActionLink("Back to List", "Index")

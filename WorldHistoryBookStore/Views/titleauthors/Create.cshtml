@@ -1,0 +1,76 @@
+﻿@model WorldHistoryBookStore.Models.titleauthor
+
+@{
+    ViewBag.Title = "Create";
+}
+<style>
+    .form-horizontal {
+        background-color: white;
+        border-color: black;
+        border-width: thin;
+        border-style: solid;
+        border-radius: 10px;
+    }
+
+    .form-actions {
+        padding-left: 10px;
+    }
+</style>
+<h2>Create</h2>
+
+<h4>Title of Author</h4>
+        <hr />
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.au_id, "au_id", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("au_id", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.au_id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.title_id, "title_id", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("title_id", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.title_id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.au_ord, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.au_ord, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.au_ord, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.royaltyper, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.royaltyper, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.royaltyper, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-actions no-color">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

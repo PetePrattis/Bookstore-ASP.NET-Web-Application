@@ -1,0 +1,76 @@
+﻿@model WorldHistoryBookStore.Models.titleauthor
+
+@{
+    ViewBag.Title = "Delete";
+}
+<style>
+    .main {
+        background-color: white;
+        border-color: black;
+        border-width: thin;
+        border-style: solid;
+        border-radius: 10px;
+        padding: 10px;
+    }
+</style>
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+
+<h4>Title of Author</h4>
+<hr />
+<div class="main">
+    <dl class="dl-horizontal">
+        <dt>
+            @* @Html.DisplayNameFor(model => model.au_ord)*@ Author Order
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.au_ord)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.royaltyper)*@ Royalty Person
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.royaltyper)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.author.au_lname)*@ Last Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.author.au_lname)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.author.au_fname)*@ First Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.author.au_fname)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.title.title1)*@ Title
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.title.title1)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-primary" />
+        </div>
+    }
+</div>
+<br />
+@Html.ActionLink("Back to List", "Index")

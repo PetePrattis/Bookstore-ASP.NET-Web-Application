@@ -1,0 +1,47 @@
+﻿@model IEnumerable<WorldHistoryBookStore.Models.pub_info>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    .table {
+        background-color: white;
+    }
+</style>
+
+<h2>Publisher Info</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            @* @Html.DisplayNameFor(model => model.publisher.pub_name)*@ Publisher Name
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.pr_info)*@ Publisher Info
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.publisher.pub_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pr_info)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.pub_id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.pub_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.pub_id })
+        </td>
+    </tr>
+    }
+
+</table>

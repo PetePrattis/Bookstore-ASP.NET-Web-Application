@@ -1,0 +1,72 @@
+﻿@model WorldHistoryBookStore.Models.roysched
+
+@{
+    ViewBag.Title = "Delete";
+}
+<style>
+    .main {
+        background-color: white;
+        border-color: black;
+        border-width: thin;
+        border-style: solid;
+        border-radius: 10px;
+        padding: 10px;
+    }
+</style>
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+
+
+<h4>Royalty Schedule</h4>
+<hr />
+
+<div class="main">
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.title.title1)*@ Title
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.title.title1)
+        </dd>
+        <dt>
+            @* @Html.DisplayNameFor(model => model.lorange)*@ Low Range
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lorange)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.hirange)*@ High Range
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hirange)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.royalty)*@ Royalty
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.royalty)
+        </dd>
+
+
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-primary" />
+
+        </div>
+    }
+</div>
+<br />
+@Html.ActionLink("Back to List", "Index")
