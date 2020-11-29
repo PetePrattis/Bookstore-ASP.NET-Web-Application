@@ -7,7 +7,7 @@ and is one of the mandatory projects for the class_
 
 > #### Description of project
 >
->>An online application in Visual C # (ASP.NET Web Application) using the Model View Controller design architecture in the Visual Studio development environment that implements the following functionality. Manage data, create reports, manage in-app backups.
+>>An online application in Visual C # (ASP.NET Web Application) using the Model View Controller design architecture in the Visual Studio development environment that implements the following functionality. Manage data, create reports, manage in-app backups. It uses bootstratp for frontend and backend connected to MS SQL Server.
 
 > #### Functionality of project
 >
